@@ -32,6 +32,7 @@ type BuildEtcdComponentConfig struct {
 	Runtime     string
 	Binary      string
 	Image       string
+	ExtraEtcd   string
 	ProjectName string
 	Version     version.Version
 	DataPath    string

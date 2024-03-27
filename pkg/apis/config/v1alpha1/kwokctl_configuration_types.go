@@ -211,6 +211,8 @@ type KwokctlConfigurationOptions struct {
 	// is the default value for flag --etcd-image and env KWOK_ETCD_IMAGE
 	EtcdImage string `json:"etcdImage,omitempty"`
 
+	ExtraEtcd string `json:"extraEtcd,omitempty"`
+
 	// KubeApiserverImage is the image of kube-apiserver.
 	// is the default value for flag --kube-apiserver-image and env KWOK_KUBE_APISERVER_IMAGE
 	KubeApiserverImage string `json:"kubeApiserverImage,omitempty"`

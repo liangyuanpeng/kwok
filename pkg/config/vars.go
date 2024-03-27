@@ -385,6 +385,9 @@ func setKwokctlEtcdConfig(conf *configv1alpha1.KwokctlConfigurationOptions) {
 		conf.EtcdImage = joinImageURI(conf.EtcdImagePrefix, "etcd", conf.EtcdVersion)
 	}
 	conf.EtcdImage = envs.GetEnvWithPrefix("ETCD_IMAGE", conf.EtcdImage)
+	if conf.ExtraEtcd != "" {
+		conf.EtcdImage = ""
+	}
 
 	conf.EtcdPort = envs.GetEnvWithPrefix("ETCD_PORT", conf.EtcdPort)
 

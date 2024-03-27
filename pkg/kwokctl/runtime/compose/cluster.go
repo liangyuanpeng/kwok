@@ -330,6 +330,9 @@ func (c *Cluster) Install(ctx context.Context) error {
 }
 
 func (c *Cluster) addEtcd(ctx context.Context, env *env) (err error) {
+	if env.kwokctlConfig.Options.ExtraEtcd != "" {
+		return nil
+	}
 	conf := &env.kwokctlConfig.Options
 
 	// Configure the etcd
@@ -348,6 +351,7 @@ func (c *Cluster) addEtcd(ctx context.Context, env *env) (err error) {
 		Workdir:     env.workdir,
 		Image:       conf.EtcdImage,
 		Version:     etcdVersion,
+		ExtraEtcd:   conf.ExtraEtcd,
 		BindAddress: net.PublicAddress,
 		Port:        conf.EtcdPort,
 		DataPath:    env.etcdDataPath,
@@ -357,6 +361,7 @@ func (c *Cluster) addEtcd(ctx context.Context, env *env) (err error) {
 		return err
 	}
 	env.kwokctlConfig.Components = append(env.kwokctlConfig.Components, etcdComponent)
+
 	return nil
 }
 

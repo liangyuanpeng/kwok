@@ -142,7 +142,8 @@ type KwokctlConfigurationOptions struct {
 	// EtcdImage is the image of etcd.
 	EtcdImage string
 
-	ExtraEtcd string
+	ExtraEtcd     string
+	ExtraEtcdPort uint32
 
 	// KubeApiserverImage is the image of kube-apiserver.
 	KubeApiserverImage string

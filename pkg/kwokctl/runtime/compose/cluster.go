@@ -271,6 +271,7 @@ func (c *Cluster) Install(ctx context.Context) error {
 		return err
 	}
 
+	fmt.Println("begin add kubeApiserver")
 	err = c.addKubeApiserver(ctx, env)
 	if err != nil {
 		return err
@@ -321,6 +322,7 @@ func (c *Cluster) Install(ctx context.Context) error {
 		return err
 	}
 
+	fmt.Println("finishInstall....")
 	err = c.finishInstall(ctx, env)
 	if err != nil {
 		return err
@@ -330,10 +332,12 @@ func (c *Cluster) Install(ctx context.Context) error {
 }
 
 func (c *Cluster) addEtcd(ctx context.Context, env *env) (err error) {
-	if env.kwokctlConfig.Options.ExtraEtcd != "" {
+
+	conf := &env.kwokctlConfig.Options
+	fmt.Println("extraEtcd:", conf.ExtraEtcd)
+	if conf.ExtraEtcd != "" {
 		return nil
 	}
-	conf := &env.kwokctlConfig.Options
 
 	// Configure the etcd
 	err = c.EnsureImage(ctx, c.runtime, conf.EtcdImage)

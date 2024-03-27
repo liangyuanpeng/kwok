@@ -274,6 +274,7 @@ func (c *Cluster) createComponent(ctx context.Context, componentName string) err
 
 func (c *Cluster) createComponents(ctx context.Context) error {
 	err := c.ForeachComponents(ctx, false, true, func(ctx context.Context, component internalversion.Component) error {
+		fmt.Println("begin create component...:", component.Name)
 		return c.createComponent(ctx, component.Name)
 	})
 	if err != nil {

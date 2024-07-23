@@ -93,18 +93,18 @@ metadata:
 spec:
   containers:
   - args:
-    - --manage-nodes-with-annotation-selector=kwok.x-k8s.io/node=fake
-    - --kubeconfig=~/.kube/config
-    - --tls-cert-file=/etc/kubernetes/pki/admin.crt
-    - --node-name=kwok-controller.kube-system.svc
-    - --node-lease-duration-seconds=40
-    - --v=-4
-    - --manage-all-nodes=false
     - --config=~/.kwok/kwok.yaml
-    - --tls-private-key-file=/etc/kubernetes/pki/admin.key
+    - --kubeconfig=~/.kube/config
+    - --manage-all-nodes=false
+    - --manage-nodes-with-annotation-selector=kwok.x-k8s.io/node=fake
     - --node-ip=$(POD_IP)
+    - --node-lease-duration-seconds=40
+    - --node-name=kwok-controller.kube-system.svc
     - --node-port=10247
     - --server-address=0.0.0.0:10247
+    - --tls-cert-file=/etc/kubernetes/pki/admin.crt
+    - --tls-private-key-file=/etc/kubernetes/pki/admin.key
+    - --v=-4
     command:
     - kwok
     env:
@@ -175,8 +175,8 @@ spec:
   containers:
   - args:
     - --config.file=/etc/prometheus/prometheus.yaml
-    - --web.listen-address=0.0.0.0:9090
     - --log.level=debug
+    - --web.listen-address=0.0.0.0:9090
     command:
     - prometheus
     env:

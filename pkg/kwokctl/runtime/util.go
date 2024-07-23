@@ -157,6 +157,7 @@ func applyComponentPatchArgs(component *internalversion.Component, patch interna
 			component.Args = append(component.Args, fmt.Sprintf("--%s=%s", k, v1))
 		}
 	}
+	sort.Strings(component.Args)
 }
 
 func getKeyValueFromArg(arg string) (string, string) {

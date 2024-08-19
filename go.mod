@@ -29,15 +29,15 @@ require (
 	golang.org/x/sync v0.7.0
 	golang.org/x/sys v0.21.0
 	golang.org/x/term v0.21.0
-	k8s.io/api v0.30.2
-	k8s.io/apimachinery v0.30.2
+	k8s.io/api v0.31.0
+	k8s.io/apimachinery v0.31.0
 	k8s.io/apiserver v0.30.2
-	k8s.io/client-go v0.30.2
+	k8s.io/client-go v0.31.0
 	k8s.io/code-generator v0.30.2
 	k8s.io/cri-api v0.30.2
 	k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340
 	k8s.io/kubelet v0.30.2
-	k8s.io/utils v0.0.0-20230726121419-3b25d923346b
+	k8s.io/utils v0.0.0-20240711033017-18e509b52bc8
 	sigs.k8s.io/controller-runtime v0.18.4
 	sigs.k8s.io/controller-tools v0.15.0
 	sigs.k8s.io/e2e-framework v0.4.0
@@ -64,6 +64,7 @@ require (
 	github.com/docker/docker-credential-helpers v0.8.2 // indirect
 	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
 	github.com/fatih/color v1.16.0 // indirect
+	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
 	github.com/go-errors/errors v1.5.1 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-openapi/jsonpointer v0.21.0 // indirect
@@ -111,6 +112,7 @@ require (
 	github.com/vladimirvivien/gexe v0.3.0 // indirect
 	github.com/wzshiming/trie v0.1.1 // indirect
 	github.com/wzshiming/winseq v0.0.0-20200720163736-7fa652d2b50e // indirect
+	github.com/x448/float16 v0.8.4 // indirect
 	github.com/xlab/treeprint v1.2.0 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.14 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.14 // indirect
